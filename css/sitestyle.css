@@ -1,11 +1,112 @@
 @charset 'utf-8';
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
+/* Box-sizing reset (https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/) */
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+html {
+    font-family: "Open Sans", sans-serif;
+}
 
 body {
     width: 80%;
     margin: auto;
+    background-color: #ccc;
 }
 
 header {
+    background-color: #8664ff;
+    border-radius: 1em;
+    position: sticky;
+    top: 0;
+}
+
+section article h1,
+h2 {
+    text-align: center;
+}
+
+section article h1 {
+    text-transform: uppercase;
+    font-size: 2.5em;
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+}
+
+section article nav ul {
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 5px;
+}
+
+nav ul li {
+    list-style: none;
+    background-color: #aaa;
+    padding: 5px 10px;
+    border-radius: 1em;
+}
+
+nav ul li a {
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+nav ul li a:visited {
+    color: black;
+}
+
+section article p {
+    line-height: 1.4;
+    text-align: justify;
+}
+
+section article img {
+    float: right;
+    width: 400px;
+    padding-left: 1em;
+}
+
+footer {
     display: flex;
     justify-content: space-between;
+}
+
+footer section h4 {
+    position: relative;
+    top: 50px;
+}
+
+@media screen and (max-width: 400px) {
+    body {
+        width: 100%;
+    }
+
+    main>section>article:first-of-type {
+        display: flex;
+        justify-content: center;
+    }
+
+    article {
+        padding: 0 5px;
+    }
+
+    section article img {
+        float: none;
+        padding-left: 0;
+        width: 320px;
+    }
+
+    footer {
+        flex-direction: column;
+    }
 }
